@@ -12,14 +12,22 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/green-supermarket-common-ui/navigation-menu";
 
-import { HomeNavDetails, OffersHomeDetails } from "@/data";
+import {
+  HomeNavDetails,
+  OffersNavDetails,
+  AccountNavDetails,
+  PageLinks,
+} from "@/data";
 
 export default function NavigationMenuTextDropdown() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
+        {/* Home dropdown */}
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Home</NavigationMenuTrigger>
+          <Link href={PageLinks[0].path}>
+            <NavigationMenuTrigger>{PageLinks[0].title}</NavigationMenuTrigger>
+          </Link>
           <NavigationMenuContent>
             <ul className="z-10 grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {HomeNavDetails.map((components) => (
@@ -35,13 +43,14 @@ export default function NavigationMenuTextDropdown() {
           </NavigationMenuContent>
         </NavigationMenuItem>
 
+        {/* Offers dropdown */}
         <NavigationMenuItem>
-          <Link href="/offers">
-            <NavigationMenuTrigger>Offers</NavigationMenuTrigger>
+          <Link href={PageLinks[1].path}>
+            <NavigationMenuTrigger>{PageLinks[1].title}</NavigationMenuTrigger>
           </Link>
           <NavigationMenuContent>
             <ul className="z-10 grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {OffersHomeDetails.map((components) => (
+              {OffersNavDetails.map((components) => (
                 <ListItem
                   key={components.title}
                   title={components.title}
@@ -52,6 +61,44 @@ export default function NavigationMenuTextDropdown() {
               ))}
             </ul>
           </NavigationMenuContent>
+        </NavigationMenuItem>
+
+        {/* Profile dropdown */}
+        <NavigationMenuItem>
+          <Link href={PageLinks[2].path}>
+            <NavigationMenuTrigger>{PageLinks[2].title}</NavigationMenuTrigger>
+          </Link>
+          <NavigationMenuContent>
+            <ul className="z-10 grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              {AccountNavDetails.map((components) => (
+                <ListItem
+                  key={components.title}
+                  title={components.title}
+                  href={components.href}
+                >
+                  {components.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+
+        {/* About us dropdown */}
+        <NavigationMenuItem>
+          <Link href={PageLinks[3].path} legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              {PageLinks[3].title}
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+
+        {/* Contact us dropdown */}
+        <NavigationMenuItem>
+          <Link href={PageLinks[4].path} legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              {PageLinks[4].title}
+            </NavigationMenuLink>
+          </Link>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
