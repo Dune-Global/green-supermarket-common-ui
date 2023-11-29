@@ -1,11 +1,16 @@
-import React from 'react'
+"use client";
 
-type Props = {}
+import { Container, Button } from "@/components/green-supermarket-common-ui";
+import NavigationMenuTextDropdown from "@/components/green-supermarket-common-ui/navigation-menu/nav-text-dropdown";
 
-const Navigation = (props: Props) => {
+const Navigation = () => {
   return (
-    <div>navigation</div>
-  )
-}
+    <div className="bg-green-0 flex">
+      <Container>
+        <NavigationMenuTextDropdown />
+      </Container>
+    </div>
+  );
+};
 
-export default Navigation
+export default Navigation;
