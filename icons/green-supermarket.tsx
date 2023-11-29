@@ -1,17 +1,21 @@
 import React from "react";
 
-type Props = {};
+type Props = {
+  mode: "light" | "dark";
+};
 
 const BrandIcon = (props: Props) => {
+  const { mode } = props;
+
+  const textColorClass = mode === "dark" ? "text-gray-900" : "text-gray-0";
+  const style = {
+    base: "text-xl font-medium leading-normal",
+  };
+
   return (
     <div className="text-left">
-      <span className="text-green-600 text-base font-medium  leading-normal">
-        GREEN
-      </span>
-      <span className="text-zinc-900 text-base font-medium leading-normal">
-        {" "}
-        SUPERMARKET
-      </span>
+      <span className={`text-green-400 ${style.base}`}>GREEN</span>{" "}
+      <span className={`${textColorClass} ${style.base}`}>SUPERMARKET</span>
     </div>
   );
 };
