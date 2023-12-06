@@ -19,17 +19,21 @@ import {
   PageLinks,
 } from "@/data";
 
+const style = {
+  navMenu: "z-10 grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]"
+}
+
 export default function NavigationMenuTextDropdown() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
         {/* Home dropdown */}
         <NavigationMenuItem>
-          <Link href={PageLinks[0].path}>
+          {/* <Link href={PageLinks[0].path}> */}
             <NavigationMenuTrigger>{PageLinks[0].title}</NavigationMenuTrigger>
-          </Link>
+          {/* </Link> */}
           <NavigationMenuContent>
-            <ul className="z-10 grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className={`${style.navMenu}`}>
               {HomeNavDetails.map((components) => (
                 <ListItem
                   key={components.title}
@@ -49,7 +53,7 @@ export default function NavigationMenuTextDropdown() {
             <NavigationMenuTrigger>{PageLinks[1].title}</NavigationMenuTrigger>
           </Link>
           <NavigationMenuContent>
-            <ul className="z-10 grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className={`${style.navMenu}`}>
               {OffersNavDetails.map((components) => (
                 <ListItem
                   key={components.title}
@@ -69,7 +73,7 @@ export default function NavigationMenuTextDropdown() {
             <NavigationMenuTrigger>{PageLinks[2].title}</NavigationMenuTrigger>
           </Link>
           <NavigationMenuContent>
-            <ul className="z-10 grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className={`${style.navMenu}`}>
               {AccountNavDetails.map((components) => (
                 <ListItem
                   key={components.title}
@@ -123,7 +127,7 @@ const ListItem = React.forwardRef<
           <div className="text-sm font-medium text-green-600 leading-none">
             {title}
           </div>
-          <p className="line-clamp-2 text-sm leading-snug text-gray-400">
+          <p className="line-clamp-2 text-xs leading-snug text-gray-400/80">
             {children}
           </p>
         </a>

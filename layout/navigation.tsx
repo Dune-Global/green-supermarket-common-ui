@@ -7,7 +7,7 @@ const Navigation = () => {
   return (
     <div className="bg-green-0 flex">
       <Container>
-        <NavigationMenuTextDropdown />
+        
       </Container>
     </div>
   );
