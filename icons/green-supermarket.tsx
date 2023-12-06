@@ -13,7 +13,7 @@ const BrandIcon = (props: Props) => {
   };
 
   return (
-    <div className="text-left">
+    <div className="">
       <span className={`text-green-400 ${style.base}`}>GREEN</span>{" "}
       <span className={`${textColorClass} ${style.base}`}>SUPERMARKET</span>
     </div>
