@@ -7,13 +7,14 @@ import {
 import { description, email, developers, name } from "@/constants";
 import { FooterLinks, FooterLogos } from "@/data";
 import Link from "next/link";
+import { Year } from "@/helpers";
 
 type Props = {};
 
-const Year = new Date().getFullYear();
+
 const Footer = (props: Props) => {
   return (
-    <footer className="bg-gray-900 text-gray-0">
+    <footer className="bg-gray-900 mt-16 text-gray-0 sticky top-full">
       <Container>
         <div className="divide-y-[1px] divide-gray-800">
           <div className="grid lg:grid-cols-3 grid-cols-1 py-10 gap-y-14">
