@@ -18,6 +18,6 @@ const BrandIcon = (props: Props) => {
       <span className={`${textColorClass} ${style.base}`}>SUPERMARKET</span>
     </div>
   );
-};
+};  
 
 export default BrandIcon;
