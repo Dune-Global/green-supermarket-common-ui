@@ -56,7 +56,7 @@ const Footer = (props: Props) => {
                   <Link href={item.link} key={item.id}>
                     <Button
                       size="icon"
-                      className="hover:bg-green-400 hover:text-gray-0"
+                      className="bg-gray-900 hover:bg-green-400 hover:text-gray-0"
                     >
                       <item.icon strokeWidth={1} />
                     </Button>
